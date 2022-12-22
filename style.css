@@ -117,9 +117,13 @@ ul {
 }
 
 .event .info .desc {
-  color: #a9a3a3;
+  color: #797777;
   font-weight: 300;
   padding: 0 0 0 20px;
+}
+
+.font-awesome {
+  margin-right: 5px;
 }
 
 /* media queries for smaller screens */
@@ -132,7 +136,7 @@ ul {
   .event .date {
     max-width: 80px;
     max-height: 80px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
   }
 
   .event .date .month {
@@ -140,7 +144,7 @@ ul {
   }
   
   .event .date .day {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     padding-bottom: 1px;
   }
 
@@ -155,13 +159,13 @@ ul {
   }
 
   .event .info .title {
-    font-size: .7rem;
-    padding: 10px 10px 0 10px;
+    font-size: 1rem;
+    /* padding: 10px 10px 0 10px; */
   }
 
   .event .info .desc {
-    font-size: 0.65rem;
-    padding: 0 0 0 10px;
+    font-size: 0.75rem;
+    /* padding: 0 0 0 10px; */
   }
 
   .event {
