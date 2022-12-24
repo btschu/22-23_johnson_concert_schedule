@@ -1,3 +1,5 @@
+const card = document.getElementById("card");
+
 // these three functions are used to modify the date info from dateTime to display correctly on the date-container
 const monthValue = function () {
   const getMonth = new Date(this.dateTime);
@@ -20,10 +22,10 @@ const weekdayValue = function () {
 const eventData = [
   {
     // todo ***change this information for all new events
-    dateTime: "11/17/2022",
-    eventName: "All-City Jazz Concert",
+    dateTime: "12/08/2022",
+    eventName: "South Triad Winter Concert",
     time: "7:00PM",
-    location: "South High Auditorium",
+    location: "Storey Gym",
     // This information will populate automatically based off of the dateTime value
     month: monthValue,
     day: dayValue,
@@ -31,10 +33,10 @@ const eventData = [
   },
   {
     // todo ***change this information for all new events
-    dateTime: "11/22/2022",
-    eventName: "SE District Clinic Concert",
-    time: "4:00PM",
-    location: "East High Auditorium",
+    dateTime: "03/02/2023",
+    eventName: "Johnson Band Solo/Ensemble Festival",
+    time: "7:45AM - 2:45PM",
+    location: "Johnson Band Room",
     // This information will populate automatically based off of the dateTime value
     month: monthValue,
     day: dayValue,
@@ -42,87 +44,10 @@ const eventData = [
   },
   {
     // todo ***change this information for all new events
-    dateTime: "1/15/2023",
-    eventName: "All-State Band",
-    time: "January 15 - 18",
-    location: "Sheridan, WY",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
-  {
-    // todo ***change this information for all new events
-    dateTime: "02/6/2023",
-    eventName: "Casper Jazz Festival",
-    time: "February 6 - 8",
-    location: "Casper, WY",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
-  {
-    // todo ***change this information for all new events
-    dateTime: "02/16/2023",
-    eventName: "All-Northwest",
-    time: "February 16 - 19",
-    location: "Bellevue, WA",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
-  {
-    // todo ***change this information for all new events
-    dateTime: "02/21/2023",
-    eventName: "Northwest Jazz Festival",
-    time: "All Day",
-    location: "Powell, WY",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
-  {
-    // todo ***change this information for all new events
-    dateTime: "02/27/2023",
-    eventName: "UW Jazz Festival",
-    time: "February 27 - 28",
-    location: "Laramie, WY",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
-  {
-    // todo ***change this information for all new events
-    dateTime: "04/06/2023",
-    eventName: "Spring Concert",
-    time: "7:00PM",
-    location: "South High Auditorium",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
-  {
-    // todo ***change this information for all new events
-    dateTime: "04/20/2023",
-    eventName: "UNC Jazz Festival",
-    time: "April 20 - 21",
-    location: "Greeley, CO",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
-  {
-    // todo ***change this information for all new events
-    dateTime: "04/24/2023",
-    eventName: "SE District Festival",
-    time: "April 24 - 25",
-    location: "Cheyenne, WY",
+    dateTime: "03/14/2023",
+    eventName: "SE District JH Band Festival",
+    time: "7:45AM - 2:45PM",
+    location: "Storey Gym",
     // This information will populate automatically based off of the dateTime value
     month: monthValue,
     day: dayValue,
@@ -141,7 +66,7 @@ const eventData = [
   },
   {
     // todo ***change this information for all new events
-    dateTime: "05/09/2023",
+    dateTime: "05/23/2023",
     eventName: "Final Concert",
     time: "7:00PM",
     location: "South High Auditorium",
@@ -150,15 +75,51 @@ const eventData = [
     day: dayValue,
     weekday: weekdayValue,
   },
-  {
-    // todo ***change this information for all new events
-    dateTime: "05/18/2023",
-    eventName: "Band Banquet",
-    time: "6:00PM",
-    location: "South High School",
-    // This information will populate automatically based off of the dateTime value
-    month: monthValue,
-    day: dayValue,
-    weekday: weekdayValue,
-  },
 ];
+
+// Display Events from eventData (LOCATED IN events.js)
+const populateEvents = (event) => {
+  const currentDate = new Date();
+  event = eventData;
+  // loop through events and append new div for each event
+  for (let i = 0; i < event.length; i++) {
+    const eventDate = new Date(event[i].dateTime);
+    const cardContent = document.createElement("div");
+    card.appendChild(cardContent);
+    cardContent.innerHTML = `
+      <time id="event-data" class="event-date" datetime="${event[i].dateTime}">
+          <div class="event-container">
+            <div class="date-container">
+              <span class="month">${event[i].month()}</span>
+              <span class="day">${event[i].day()}</span>
+              <span class="weekday">${event[i].weekday()}</span>
+            </div>
+            <div class="event-info-container">
+              <h2 class="event-name">${event[i].eventName}</h2>
+              <div class="time-location-container">
+                <p>
+                  <i class="fa-regular fa-clock font-awesome"></i>${event[i].time}<br>
+                  <i class="fa-solid fa-earth-americas font-awesome"></i>${event[i].location}
+                </p>
+              </div>
+            </div>
+          </div>
+      </time>`;
+
+    // Cross out complete events
+    if (eventDate < currentDate) {
+      document.querySelectorAll(".event-name").forEach((e) => {
+        // !use the line below to cross out only the event title
+        e.style.textDecoration = "line-through";
+        // !use the line below to cross out everything on the card
+        // cardContent.style.textDecoration = "line-through";
+        // !use the line below to hide all completed events
+        // cardContent.style.display = 'none';
+      });
+    }
+  }
+  return eventData;
+};
+
+// on load
+populateEvents();
