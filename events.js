@@ -20,10 +20,10 @@ const weekdayValue = function () {
 const eventData = [
   {
     // todo ***change this information for all new events
-    dateTime: "12/08/2022",
-    eventName: "South Triad Winter Concert",
+    dateTime: "11/17/2022",
+    eventName: "All-City Jazz Concert",
     time: "7:00PM",
-    location: "Storey Gym",
+    location: "South High Auditorium",
     // This information will populate automatically based off of the dateTime value
     month: monthValue,
     day: dayValue,
@@ -31,10 +31,10 @@ const eventData = [
   },
   {
     // todo ***change this information for all new events
-    dateTime: "03/02/2023",
-    eventName: "Johnson Band Solo/Ensemble Festival",
-    time: "7:45AM - 2:45PM",
-    location: "Johnson Band Room",
+    dateTime: "11/22/2022",
+    eventName: "SE District Clinic Concert",
+    time: "4:00PM",
+    location: "East High Auditorium",
     // This information will populate automatically based off of the dateTime value
     month: monthValue,
     day: dayValue,
@@ -42,10 +42,87 @@ const eventData = [
   },
   {
     // todo ***change this information for all new events
-    dateTime: "03/14/2023",
-    eventName: "SE District JH Band Festival",
-    time: "7:45AM - 2:45PM",
-    location: "Storey Gym",
+    dateTime: "1/15/2023",
+    eventName: "All-State Band",
+    time: "January 15 - 18",
+    location: "Sheridan, WY",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "02/6/2023",
+    eventName: "Casper Jazz Festival",
+    time: "February 6 - 8",
+    location: "Casper, WY",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "02/16/2023",
+    eventName: "All-Northwest",
+    time: "February 16 - 19",
+    location: "Bellevue, WA",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "02/21/2023",
+    eventName: "Northwest Jazz Festival",
+    time: "All Day",
+    location: "Powell, WY",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "02/27/2023",
+    eventName: "UW Jazz Festival",
+    time: "February 27 - 28",
+    location: "Laramie, WY",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "04/06/2023",
+    eventName: "Spring Concert",
+    time: "7:00PM",
+    location: "South High Auditorium",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "04/20/2023",
+    eventName: "UNC Jazz Festival",
+    time: "April 20 - 21",
+    location: "Greeley, CO",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "04/24/2023",
+    eventName: "SE District Festival",
+    time: "April 24 - 25",
+    location: "Cheyenne, WY",
     // This information will populate automatically based off of the dateTime value
     month: monthValue,
     day: dayValue,
@@ -64,10 +141,21 @@ const eventData = [
   },
   {
     // todo ***change this information for all new events
-    dateTime: "05/23/2023",
+    dateTime: "05/09/2023",
     eventName: "Final Concert",
     time: "7:00PM",
     location: "South High Auditorium",
+    // This information will populate automatically based off of the dateTime value
+    month: monthValue,
+    day: dayValue,
+    weekday: weekdayValue,
+  },
+  {
+    // todo ***change this information for all new events
+    dateTime: "05/18/2023",
+    eventName: "Band Banquet",
+    time: "6:00PM",
+    location: "South High School",
     // This information will populate automatically based off of the dateTime value
     month: monthValue,
     day: dayValue,
