@@ -1,58 +1,10 @@
 const card = document.getElementById("card");
 
-const eventData = [
-  {
-    dateTime: "12/08/2022",
-    month: "December",
-    day: 8,
-    weekday: "Thursday",
-    eventName: "South Triad Winter Concert",
-    time: "7:00PM",
-    location: "Storey Gym",
-  },
-  {
-    dateTime: "03/02/2023",
-    month: "March",
-    day: 2,
-    weekday: "Thursday",
-    eventName: "Johnson Band Solo/Ensemble Festival",
-    time: "7:45AM - 2:45PM",
-    location: "Johnson Band Room",
-  },
-  {
-    dateTime: "03/14/2023",
-    month: "March",
-    day: 14,
-    weekday: "Tuesday",
-    eventName: "SE District JH Band Festival",
-    time: "7:45AM - 2:45PM",
-    location: "Storey Gym",
-  },
-  {
-    dateTime: "05/02/2023",
-    month: "May",
-    day: 2,
-    weekday: "Tuesday",
-    eventName: "All-City Band",
-    time: "7:00PM",
-    location: "Storey Gym",
-  },
-  {
-    dateTime: "05/23/2023",
-    month: "May",
-    day: 23,
-    weekday: "Tuesday",
-    eventName: "Final Concert",
-    time: "7:00PM",
-    location: "South High Auditorium",
-  },
-];
-
-// Display Events from eventData
+// Display Events from eventData (LOCATED IN events.js)
 const populateEvents = (event) => {
   const currentDate = new Date();
   event = eventData;
-
+  // loop through events and append new div for each event
   for (let i = 0; i < event.length; i++) {
     const eventDate = new Date(event[i].dateTime);
     const cardContent = document.createElement("div");
@@ -61,9 +13,9 @@ const populateEvents = (event) => {
       <time id="event-data" class="event-date" datetime="${event[i].dateTime}">
           <div class="event-container">
             <div class="date-container">
-              <span class="month">${event[i].month}</span>
-              <span class="day">${event[i].day}</span>
-              <span class="weekday">${event[i].weekday}</span>
+              <span class="month">${event[i].month()}</span>
+              <span class="day">${event[i].day()}</span>
+              <span class="weekday">${event[i].weekday()}</span>
             </div>
             <div class="event-info-container">
               <h2 class="event-name">${event[i].eventName}</h2>
@@ -77,12 +29,14 @@ const populateEvents = (event) => {
           </div>
       </time>`;
 
-    // Remove or cross out complete events
+    // Cross out complete events
     if (eventDate < currentDate) {
-      // cardContent.style.textDecoration = "line-through";
       document.querySelectorAll(".event-name").forEach((e) => {
+        // !use the line below to cross out only the event title
         e.style.textDecoration = "line-through";
-        // hide elements
+        // !use the line below to cross out everything on the card
+        // cardContent.style.textDecoration = "line-through";
+        // !use the line below to hide all completed events
         // cardContent.style.display = 'none';
       });
     }
@@ -90,4 +44,5 @@ const populateEvents = (event) => {
   return eventData;
 };
 
+// on load
 populateEvents();

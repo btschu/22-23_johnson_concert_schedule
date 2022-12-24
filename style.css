@@ -12,6 +12,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* title displayed at the top of the DOM */
 .main-title {
   color: #000;
   font-family: "Lato", sans-serif;
@@ -31,6 +32,8 @@ body {
   display: flex;
   align-items: center;
 }
+
+/* calendar widget */
 
 .event-container .date-container {
   display: block;
@@ -67,6 +70,8 @@ body {
   font-weight: 500;
 }
 
+/* event information (title | time | location */
+
 .event-container .event-info-container {
   color: #000;
 }
@@ -92,9 +97,14 @@ body {
 /* media queries for smaller screens */
 
 @media (max-width: 800px) {
+  /* Event Cards */
+
   .event-container {
     margin-bottom: 10px;
+    max-height: 100px;
   }
+
+  /* calendar widget */
 
   .event-container .date-container {
     max-width: 80px;
@@ -103,6 +113,7 @@ body {
 
   .event-container .date-container .month {
     font-size: .8rem;
+    font-weight: 900;
   }
   
   .event-container .date-container .day {
@@ -110,24 +121,17 @@ body {
     padding-bottom: 1px;
   }
 
-
   .event-container .date-container .weekday {
     font-size: .5rem;
   }
 
-  .event-container .date-container .month {
-    font-weight: 900;
-  }
-
+  /* event information (title | time | location */
+  
   .event-container .event-info-container .event-name {
     font-size: 1rem;
   }
 
   .event-container .event-info-container .time-location-container {
     font-size: 0.75rem;
-  }
-
-  .event-container {
-    max-height: 100px;
   }
 }
